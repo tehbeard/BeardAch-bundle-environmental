@@ -32,7 +32,7 @@
 		<dependency>
 			<groupId>me.tehbeard</groupId>
 			<artifactId>BeardAch</artifactId>
-			<version>0.4.6-SNAPSHOT</version>
+			<version>0.4.6</version>
 		</dependency>
 	</dependencies>
 </project>
