@@ -4,6 +4,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
+import com.google.gson.annotations.Expose;
+
 import me.tehbeard.BeardAch.achievement.Achievement;
 import me.tehbeard.BeardAch.achievement.help.Argument;
 import me.tehbeard.BeardAch.achievement.help.Usage;
@@ -19,6 +21,7 @@ import me.tehbeard.BeardAch.dataSource.configurable.Configurable;
 }, packageName = "Environmental")
 public class CompassTargetReward implements IReward {
 
+    @Expose
     private Location l;
 
     public void configure(Achievement ach, String config) {

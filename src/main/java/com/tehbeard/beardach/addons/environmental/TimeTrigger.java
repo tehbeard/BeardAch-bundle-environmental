@@ -2,6 +2,8 @@ package com.tehbeard.beardach.addons.environmental;
 
 import org.bukkit.entity.Player;
 
+import com.google.gson.annotations.Expose;
+
 import me.tehbeard.BeardAch.achievement.Achievement;
 import me.tehbeard.BeardAch.achievement.help.Argument;
 import me.tehbeard.BeardAch.achievement.help.Usage;
@@ -16,7 +18,9 @@ import me.tehbeard.BeardAch.dataSource.configurable.Configurable;
         }, packageName = "Environmental")
 public class TimeTrigger implements ITrigger {
 
+    @Expose
     long after = 0;
+    @Expose
     long  before = 0;
     public void configure(Achievement ach, String config) {
         String[] c = config.split(":");
