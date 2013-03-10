@@ -8,7 +8,6 @@ import me.tehbeard.BeardAch.achievement.Achievement;
 import me.tehbeard.BeardAch.achievement.rewards.IReward;
 import me.tehbeard.BeardAch.dataSource.configurable.Configurable;
 import me.tehbeard.BeardAch.dataSource.json.editor.EditorField;
-import me.tehbeard.BeardAch.dataSource.json.editor.EditorFieldType;
 
 @Configurable(tag="ignite",name="Ignite the player")
 public class IgnitionReward implements IReward {
