@@ -6,17 +6,17 @@ import org.bukkit.entity.Player;
 import com.google.gson.annotations.Expose;
 
 import me.tehbeard.BeardAch.achievement.Achievement;
-import me.tehbeard.BeardAch.achievement.help.Argument;
-import me.tehbeard.BeardAch.achievement.help.Usage;
 import me.tehbeard.BeardAch.achievement.rewards.IReward;
 import me.tehbeard.BeardAch.dataSource.configurable.Configurable;
+import me.tehbeard.BeardAch.dataSource.json.editor.EditorField;
+import me.tehbeard.BeardAch.dataSource.json.editor.EditorFieldType;
 
-@Configurable(tag="lightning")
-@Usage(arguments = { @Argument(name="real",desc="Whether to use real or fake lightning") }, packageName = "Environmental")
+@Configurable(tag="lightning",name="Strike lightning on player")
 public class LightningReward implements IReward {
 
     @Expose
-    private boolean real;
+    @EditorField(alias="Real Lightning?",type=EditorFieldType.bool)
+    private boolean real = false;
     
     public void configure(Achievement ach, String config) {
         if(config.equalsIgnoreCase("true")){
@@ -38,6 +38,11 @@ public class LightningReward implements IReward {
         }
         
     }
+
+	public void configure(Achievement ach) {
+		// TODO Auto-generated method stub
+		
+	}
 
      
 }

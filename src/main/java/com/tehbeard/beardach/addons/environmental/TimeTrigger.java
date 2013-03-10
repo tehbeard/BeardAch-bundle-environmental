@@ -5,22 +5,20 @@ import org.bukkit.entity.Player;
 import com.google.gson.annotations.Expose;
 
 import me.tehbeard.BeardAch.achievement.Achievement;
-import me.tehbeard.BeardAch.achievement.help.Argument;
-import me.tehbeard.BeardAch.achievement.help.Usage;
 import me.tehbeard.BeardAch.achievement.triggers.ITrigger;
 import me.tehbeard.BeardAch.dataSource.configurable.Configurable;
+import me.tehbeard.BeardAch.dataSource.json.editor.EditorField;
+import me.tehbeard.BeardAch.dataSource.json.editor.EditorFieldType;
 
 
-@Configurable(tag="time")
-@Usage(arguments = { 
-        @Argument(name="after",desc="Must be after this time"),
-        @Argument(name="before",desc="Must be before this time")
-        }, packageName = "Environmental")
+@Configurable(tag="time",name="Between two times")
 public class TimeTrigger implements ITrigger {
 
     @Expose
+    @EditorField(alias="After this time(ticks)")
     long after = 0;
     @Expose
+    @EditorField(alias="Before this time(ticks)")
     long  before = 0;
     public void configure(Achievement ach, String config) {
         String[] c = config.split(":");
@@ -33,6 +31,11 @@ public class TimeTrigger implements ITrigger {
         Long t = p.getWorld().getTime();
         return after<before ? (after < t && before > t) : (after < t || before > t);
     }
+
+	public void configure(Achievement ach) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
 /*

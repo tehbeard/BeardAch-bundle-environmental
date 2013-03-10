@@ -5,16 +5,16 @@ import org.bukkit.entity.Player;
 import com.google.gson.annotations.Expose;
 
 import me.tehbeard.BeardAch.achievement.Achievement;
-import me.tehbeard.BeardAch.achievement.help.Argument;
-import me.tehbeard.BeardAch.achievement.help.Usage;
 import me.tehbeard.BeardAch.achievement.triggers.ITrigger;
 import me.tehbeard.BeardAch.dataSource.configurable.Configurable;
+import me.tehbeard.BeardAch.dataSource.json.editor.EditorField;
+import me.tehbeard.BeardAch.dataSource.json.editor.EditorFieldType;
 
-@Configurable(tag="storm")
-@Usage(arguments = { @Argument(name="stormy",desc="Wether to trigger if it's stormy") }, packageName = "Environmental")
+@Configurable(tag="storm",name="Is it stormy?")
 public class StormTrigger implements ITrigger {
 
     @Expose
+    @EditorField(alias="Storm currently?",type=EditorFieldType.bool)
     private boolean isStormy;
     
     public void configure(Achievement arg0, String config) {
@@ -33,5 +33,10 @@ public class StormTrigger implements ITrigger {
        
         return p.getWorld().hasStorm() == isStormy;
     }
+
+	public void configure(Achievement ach) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
